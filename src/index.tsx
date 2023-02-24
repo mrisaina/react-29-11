@@ -1,19 +1,37 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+// const title = React.createElement(
+//     'h1',
+//     {
+//         id: 'title',
+//         className: 'className',
+//     },
+//     'hello react'
+// )
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// added element with JSX
+
+const title = (
+    <h1 id="red" className="className">
+        <div>title</div>
+    </h1>
+)
+
+const list = (
+    <ul>
+        <li>list item 1</li>
+        <li>list item 2</li>
+        <li>list item 3</li>
+    </ul>
+)
+
+const content = (
+    <div>
+        {title}
+        {list}
+    </div>
+)
+
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
+root.render(<React.StrictMode>{content}</React.StrictMode>)
