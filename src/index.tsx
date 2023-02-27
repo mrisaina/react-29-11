@@ -33,8 +33,35 @@ import ReactDOM from 'react-dom/client'
 //     </div>
 // )
 
-const App = () => {
+const Title = () => {
     return <h1>Hello React App Component</h1>
+}
+
+const Content = () => {
+    return (
+        <React.Fragment>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima
+                fuga praesentium facere ea molestias enim veritatis beatae
+                libero, dolor obcaecati harum rerum aliquid officia corporis.
+                Quaerat nam voluptatem tempore cum!
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima
+                fuga praesentium facere ea molestias enim veritatis beatae
+                libero, dolor obcaecati harum rerum aliquid officia corporis.
+                Quaerat nam voluptatem tempore cum!
+            </p>
+        </React.Fragment>
+    )
+}
+
+const App = () => {
+    return (
+        <>
+            <Title /> <Content />
+        </>
+    )
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
