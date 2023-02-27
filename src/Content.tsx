@@ -1,18 +1,13 @@
-const Content = () => {
+type ContentType = {
+    text1: string
+    text2: string
+}
+
+const Content = (props: ContentType) => {
     return (
         <>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima
-                fuga praesentium facere ea molestias enim veritatis beatae
-                libero, dolor obcaecati harum rerum aliquid officia corporis.
-                Quaerat nam voluptatem tempore cum!
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima
-                fuga praesentium facere ea molestias enim veritatis beatae
-                libero, dolor obcaecati harum rerum aliquid officia corporis.
-                Quaerat nam voluptatem tempore cum!
-            </p>
+            <p>{props.text1}</p>
+            <p>{props.text2}</p>
         </>
     )
 }

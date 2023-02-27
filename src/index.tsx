@@ -6,9 +6,9 @@ import Title from './Title'
 const App = () => {
     return (
         <>
-            <Title title="React" />
-            <Title title="App Welcome" />
-            <Content />
+            <Title title="React" year={2022} />
+            <Title title="App Welcome" year={2023} />
+            <Content text1="Text1, Hello!" text2="Text2, Hello!" />
         </>
     )
 }
