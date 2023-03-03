@@ -3,11 +3,11 @@ type ContentType = {
     text2: string
 }
 
-const Content = (props: ContentType) => {
+const Content = ({ text1, text2 }: ContentType) => {
     return (
         <>
-            <p>{props.text1}</p>
-            <p>{props.text2}</p>
+            <p>{text1}</p>
+            <p>{text2}</p>
         </>
     )
 }
