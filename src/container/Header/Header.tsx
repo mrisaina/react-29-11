@@ -9,7 +9,12 @@ import { Container } from '@mui/system'
 type Props = {}
 const Header = (props: Props) => {
     return (
-        <AppBar position="static">
+        <AppBar
+            position="static"
+            style={{
+                backgroundColor: 'green',
+            }}
+        >
             <Container>
                 <Toolbar>
                     <IconButton
@@ -28,7 +33,11 @@ const Header = (props: Props) => {
                     >
                         News
                     </Typography>
-                    <Button color="inherit">Login</Button>
+                    <Button color="inherit">Home</Button>
+                    <Button color="inherit">About</Button>
+                    <Button color="inherit">Payment</Button>
+                    <Button color="inherit">Shipping</Button>
+                    <Button color="inherit">Cart</Button>
                 </Toolbar>
             </Container>
         </AppBar>
