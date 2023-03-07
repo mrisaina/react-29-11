@@ -4,15 +4,15 @@ import './ProductListItem.scss'
 type productListItem = {
     title: string
     desc: string
-    feature1: string
-    feature2: string
+    type: string
+    capacity: number
     price: number
 }
 const ProductListItem = ({
     title,
     desc,
-    feature1,
-    feature2,
+    type,
+    capacity,
     price,
 }: productListItem) => {
     return (
@@ -20,8 +20,8 @@ const ProductListItem = ({
             <CardContent>
                 <h4 className="product-title">{title}</h4>
                 <div className="product-desc">{desc}</div>
-                <div className="product-features">Type: {feature1}</div>
-                <div className="product-features">Capacity: {feature2}</div>
+                <div className="product-features">Type: {type}</div>
+                <div className="product-features">Capacity: {capacity}GB</div>
                 <div className="product-price">
                     Price: <strong>${price}</strong>
                 </div>
