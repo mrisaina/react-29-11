@@ -30,3 +30,12 @@
         height: 185px;
     }
 }
+
+.product-quantity {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    input {
+        text-align: center;
+    }
+}
