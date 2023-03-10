@@ -5,6 +5,7 @@ type productListItem = {
     type: string
     capacity: number
     price: number
+    image: string
 }
 
 const productsArray: productListItem[] = [
@@ -15,6 +16,7 @@ const productsArray: productListItem[] = [
         type: 'super phone',
         capacity: 256,
         price: 1200,
+        image: '/images/iphone-blue.jpeg',
     },
     {
         id: 2,
@@ -23,6 +25,7 @@ const productsArray: productListItem[] = [
         type: 'phone',
         capacity: 128,
         price: 1000,
+        image: '/images/iphone-gold.jpeg',
     },
     {
         id: 3,
@@ -31,6 +34,7 @@ const productsArray: productListItem[] = [
         type: 'phone((',
         capacity: 64,
         price: 900,
+        image: '/images/iphone-gray.jpeg',
     },
     {
         id: 4,
@@ -39,6 +43,7 @@ const productsArray: productListItem[] = [
         type: 'phone++',
         capacity: 128,
         price: 1100,
+        image: '/images/iphone-purple.jpeg',
     },
     {
         id: 5,
@@ -47,6 +52,7 @@ const productsArray: productListItem[] = [
         type: 'phone-super',
         capacity: 258,
         price: 1500,
+        image: '/images/iphone-red.jpeg',
     },
     {
         id: 6,
@@ -55,6 +61,7 @@ const productsArray: productListItem[] = [
         type: 'phone-super',
         capacity: 258,
         price: 1400,
+        image: '/images/iphone-white.jpeg',
     },
 ]
 

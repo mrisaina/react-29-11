@@ -7,6 +7,7 @@ type productListItem = {
     type: string
     capacity: number
     price: number
+    image: string
 }
 const ProductListItem = ({
     title,
@@ -14,10 +15,14 @@ const ProductListItem = ({
     type,
     capacity,
     price,
+    image,
 }: productListItem) => {
     return (
         <Card variant="outlined" className="product">
             <CardContent>
+                <div className="product-image">
+                    <img src={image} alt="" />
+                </div>
                 <h4 className="product-title">{title}</h4>
                 <div className="product-desc">{desc}</div>
                 <div className="product-features">Type: {type}</div>
