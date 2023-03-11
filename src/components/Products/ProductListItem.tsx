@@ -59,6 +59,7 @@ class ProductListItem extends Component<productListItem, State> {
                         <Button
                             variant="outlined"
                             onClick={this.onDecrementClick}
+                            disabled={this.state.count === 1 ? true : false}
                         >
                             -
                         </Button>
