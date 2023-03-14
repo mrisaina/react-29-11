@@ -26,8 +26,6 @@ const ProductListItem = ({
 }: productListItem) => {
     const [count, setCount] = useState<number>(1)
 
-    const [countEl, setPhoneCount] = useState<number>(0)
-
     const onIncrement = () => {
         setCount(count + 1)
     }
