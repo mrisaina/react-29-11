@@ -14,8 +14,8 @@ type CartData = {
 
 const App = (props: Props) => {
     const [cartData, setCartData] = useState<CartData>({
-        totalCount: 10,
-        totalPrice: 1000,
+        totalCount: 0,
+        totalPrice: 0,
     })
 
     const addProductToCart = (count: number, price: number) => {
