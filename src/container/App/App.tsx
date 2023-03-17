@@ -17,10 +17,21 @@ const App = (props: ProductsInCartType) => {
         2: 5,
     })
 
+    const addSecondProduct = (item: number, amount: number) => {
+        setProductsInCart((prevState) =>
+            Object.assign({}, prevState, {
+                [item]: prevState[item] + amount,
+            })
+        )
+    }
+
     return (
         <StyledEngineProvider injectFirst>
             <CssBaseline />
             <Header cartData={productsInCart} />
+            <button onClick={() => addSecondProduct(2, 4)}>
+                Add o Cart(2, 5)
+            </button>
             <Main />
             <Footer />
         </StyledEngineProvider>
