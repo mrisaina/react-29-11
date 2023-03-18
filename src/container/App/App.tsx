@@ -4,35 +4,38 @@ import Main from 'container/Main/Main'
 import CssBaseline from '@mui/material/CssBaseline'
 import { StyledEngineProvider } from '@mui/material/styles'
 import { useState } from 'react'
+import productsArray from 'utils/productsArray'
 
-type Props = {}
+// type Props = {}
 
 type ProductsInCartType = {
     [id: number]: number
 }
 
 const App = (props: ProductsInCartType) => {
-    const [productsInCart, setProductsInCart] = useState<ProductsInCartType>({
-        1: 5,
-        2: 5,
-    })
+    let defaultCount = 0
+    let productCountArray = productsArray.map(({ id }) =>
+        Object.assign({}, { [id]: defaultCount })
+    )
+    let newProductCountArray = Object.assign({}, ...[...productCountArray])
+    const [productsInCart, setProductsInCart] =
+        useState<ProductsInCartType>(newProductCountArray)
 
-    const addSecondProduct = (item: number, amount: number) => {
-        setProductsInCart((prevState) =>
-            Object.assign({}, prevState, {
-                [item]: prevState[item] + amount,
-            })
-        )
+    const addProductToCart = (item: number, amount: number) => {
+        setProductsInCart((prevState) => ({
+            ...prevState,
+            [item]: prevState[item] + amount,
+        }))
     }
 
     return (
         <StyledEngineProvider injectFirst>
             <CssBaseline />
             <Header cartData={productsInCart} />
-            <button onClick={() => addSecondProduct(2, 4)}>
+            <button onClick={() => addProductToCart(2, 4)}>
                 Add o Cart(2, 5)
             </button>
-            <Main />
+            <Main addProductToCart={addProductToCart} />
             <Footer />
         </StyledEngineProvider>
     )

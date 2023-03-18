@@ -1,15 +1,18 @@
+import productsArray from 'utils/productsArray'
+
 type Props = {
     cartData: {
         [id: number]: number
     }
 }
-const CartHeader = (props: Props) => {
+const CartHeader = ({ cartData }: Props) => {
     return (
         <div>
-            {Object.keys(props.cartData).map((id) => {
+            {Object.keys(cartData).map((id) => {
+                let product = productsArray.find((el) => Number(id) === el.id)
                 return (
                     <div key={id}>
-                        {id} : {props.cartData[Number(id)]}
+                        {product?.title} : {cartData[Number(id)]}
                     </div>
                 )
             })}

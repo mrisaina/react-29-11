@@ -13,7 +13,7 @@ type Props = {
         [id: number]: number
     }
 }
-const Header = (props: Props) => {
+const Header = ({ cartData }: Props) => {
     return (
         <AppBar position="static" className="app-bar">
             <Container>
@@ -29,7 +29,7 @@ const Header = (props: Props) => {
                     </IconButton>
                     <Logo />
                     <Menu />
-                    <CartHeader cartData={props.cartData} />
+                    <CartHeader cartData={cartData} />
                 </Toolbar>
             </Container>
         </AppBar>
