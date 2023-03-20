@@ -29,6 +29,16 @@ const CartHeader = ({
                     </div>
                 )
             })}
+            <div>
+                Total: ${' '}
+                {Object.keys(cartData).reduce((sum, itemId) => {
+                    sum =
+                        sum +
+                        cartData[Number(itemId)] *
+                            productsObject[Number(itemId)].price
+                    return sum
+                }, 0)}
+            </div>
         </div>
     )
 }
