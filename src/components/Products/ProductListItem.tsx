@@ -16,7 +16,7 @@ type productListItem = {
     capacity: number
     price: number
     image: string
-    addProductToCart(total: number, price: number): void
+    addProductToCart(id: number, count: number): void
 }
 const ProductListItem = ({
     id,

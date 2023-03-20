@@ -24,7 +24,7 @@ const App = (props: ProductsInCartType) => {
     const addProductToCart = (item: number, amount: number) => {
         setProductsInCart((prevState) => ({
             ...prevState,
-            [item]: prevState[item] + amount,
+            [item]: prevState[item] || 0 + amount,
         }))
     }
 
@@ -32,9 +32,6 @@ const App = (props: ProductsInCartType) => {
         <StyledEngineProvider injectFirst>
             <CssBaseline />
             <Header cartData={productsInCart} />
-            <button onClick={() => addProductToCart(2, 4)}>
-                Add o Cart(2, 5)
-            </button>
             <Main addProductToCart={addProductToCart} />
             <Footer />
         </StyledEngineProvider>
