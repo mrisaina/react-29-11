@@ -19,9 +19,6 @@ const CartHeader = ({
     return (
         <div>
             {Object.keys(cartData).map((id) => {
-                // let test = getProductsObject(productsArray)
-                // console.log(test)
-                // let product = productsArray.find((el) => Number(id) === el.id)
                 return (
                     <div key={id}>
                         {productsObject[Number(id)].title} :{' '}
