@@ -1,8 +1,7 @@
 import Typography from '@mui/material/Typography'
-import productsArray, {
-    getProductsObject,
-    productListItem,
-} from 'utils/productsArray'
+import CartProductList from 'components/CartProductList/CartProductList'
+import CartTotal from 'components/CartTotal/CartTotal'
+import { productListItem } from 'utils/productsArray'
 
 type Props = {
     cartData: {
@@ -13,35 +12,15 @@ type Props = {
         [id: number]: productListItem
     }
 }
-const CartPage = ({
-    cartData,
-    productsObject = getProductsObject(productsArray),
-}: Props) => {
+const CartPage = ({ cartData }: Props) => {
     return (
         <>
             <Typography variant="h4" component={'h1'}>
                 CartPage
             </Typography>
             <div>
-                {Object.keys(cartData).map((id) => {
-                    return (
-                        <div key={id}>
-                            {productsObject[Number(id)].title} :{' '}
-                            {cartData[Number(id)]}:{' '}
-                            {productsObject[Number(id)].price}
-                        </div>
-                    )
-                })}
-                <div>
-                    Total: ${' '}
-                    {Object.keys(cartData).reduce((sum, itemId) => {
-                        sum =
-                            sum +
-                            cartData[Number(itemId)] *
-                                productsObject[Number(itemId)].price
-                        return sum
-                    }, 0)}
-                </div>
+                <CartProductList cartData={cartData} />
+                <CartTotal cartData={cartData} />
             </div>
         </>
     )
