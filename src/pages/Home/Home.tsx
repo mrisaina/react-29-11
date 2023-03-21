@@ -1,10 +1,12 @@
 import ProductList from 'components/Products/ProductList'
 
-type Props = {}
-const Home = (props: Props) => {
+type Props = {
+    addProductToCart(total: number, price: number): void
+}
+const Home = ({ addProductToCart }: Props) => {
     return (
         <div>
-            <ProductList />
+            <ProductList addProductToCart={addProductToCart} />
         </div>
     )
 }
