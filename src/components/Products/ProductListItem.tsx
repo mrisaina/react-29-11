@@ -50,6 +50,7 @@ const ProductListItem = ({
                     count={count}
                     onDecrement={onDecrement}
                     onIncrement={onIncrement}
+                    minCount={1}
                 />
                 <CardActions className="btns-wrap">
                     <Button
