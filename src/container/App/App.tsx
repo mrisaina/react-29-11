@@ -29,10 +29,21 @@ const App = (props: ProductsInCartType) => {
         }))
     }
 
+    const removeProductFromCart = (id: number) => {
+        setProductsInCart((prevState) => {
+            let prevProductsInCart = { ...prevState }
+            delete prevProductsInCart[id]
+            return prevProductsInCart
+        })
+    }
+
     return (
         <StyledEngineProvider injectFirst>
             <CssBaseline />
             <Header cartData={productsInCart} />
+            {/* <button onClick={() => removeProductFromCart(1)}>
+                Remove element
+            </button> */}
             <Container
                 sx={{
                     padding: '40px 0',
@@ -45,7 +56,12 @@ const App = (props: ProductsInCartType) => {
                     />
                     <Route
                         path="/cart"
-                        element={<CartPage cartData={productsInCart} />}
+                        element={
+                            <CartPage
+                                cartData={productsInCart}
+                                removeProductFromCart={removeProductFromCart}
+                            />
+                        }
                     />
                 </Routes>
             </Container>

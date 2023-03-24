@@ -13,11 +13,13 @@ type Props = {
         [id: number]: productListItem
     }
     CartItem?: any
+    removeProductFromCart?: (id: number) => void
 }
 const CartProductList = ({
     cartData,
     productsObject = getProductsObject(productsArray),
     CartItem = CartProductListItem,
+    removeProductFromCart,
 }: Props) => {
     return (
         <>
@@ -27,6 +29,7 @@ const CartProductList = ({
                         key={id}
                         product={productsObject[Number(id)]}
                         productCount={cartData[Number(id)]}
+                        removeProductFromCart={removeProductFromCart}
                     />
                 )
             })}
