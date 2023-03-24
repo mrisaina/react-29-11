@@ -8,6 +8,7 @@ import { Container } from '@mui/material'
 import Home from 'pages/Home/Home'
 import { Routes, Route } from 'react-router-dom'
 import CartPage from 'pages/Cart/CartPage'
+import { omit } from 'lodash'
 
 type ProductsInCartType = {
     [id: number]: number
@@ -30,11 +31,7 @@ const App = (props: ProductsInCartType) => {
     }
 
     const removeProductFromCart = (id: number) => {
-        setProductsInCart((prevState) => {
-            let prevProductsInCart = { ...prevState }
-            delete prevProductsInCart[id]
-            return prevProductsInCart
-        })
+        setProductsInCart((prevState) => omit(prevState, id))
     }
 
     return (
