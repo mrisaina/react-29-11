@@ -15,8 +15,13 @@ type Props = {
     }
 
     removeProductFromCart: (id: number) => void
+    changeProductQuantity: (id: number, count: number) => void
 }
-const CartPage = ({ cartData, removeProductFromCart }: Props) => {
+const CartPage = ({
+    cartData,
+    removeProductFromCart,
+    changeProductQuantity,
+}: Props) => {
     return (
         <>
             <Typography variant="h4" component={'h1'}>
@@ -27,6 +32,7 @@ const CartPage = ({ cartData, removeProductFromCart }: Props) => {
                     cartData={cartData}
                     CartItem={CardProductListItemExtended}
                     removeProductFromCart={removeProductFromCart}
+                    changeProductQuantity={changeProductQuantity}
                 />
             </Grid>
 
