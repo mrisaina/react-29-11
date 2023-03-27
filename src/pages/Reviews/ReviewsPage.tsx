@@ -48,7 +48,7 @@ const ReviewsPage = (props: Props) => {
 
     const onSend = (e: React.ChangeEvent<HTMLFormElement>) => {
         e.preventDefault()
-        if (newReview.name === '' || newReview.text === '') {
+        if (!newReview.name || !newReview.text) {
             alert('All fields required!')
             return
         }
